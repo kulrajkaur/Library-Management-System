@@ -17,6 +17,8 @@ public interface BookRepository extends JpaRepository<Books,Long > {
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("SELECT b FROM Books b WHERE bookId= :bookId")
     Optional<Books> findBookByLock(@Param("bookId") Long bookId);
+    @Query("SELECT b From Books b WHERE b.author= :author")
+    List <Books> findBookByAuthor(@Param("author")String author);
 
 
 

@@ -35,6 +35,10 @@ public class BookController {
                                    @RequestParam(required=false) String author){
         return bookService.filterBooks(bookName,author);
     }
+    @GetMapping("/search/book/{author}")
+    public List <Books> findBookByAuthor(@PathVariable String author){
+        return bookService.findBookByAuthor(author);
+    }
     @DeleteMapping("/delete/{userId}")
     public void deleteBook(@PathVariable Long userId){
         bookService.deleteBook(userId);

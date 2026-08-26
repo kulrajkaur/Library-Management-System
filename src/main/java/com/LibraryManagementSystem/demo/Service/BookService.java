@@ -41,6 +41,9 @@ public class BookService {
         }
         return bookRepository.findAll();
     }
+    public List <Books> findBookByAuthor(String author){
+        return bookRepository.findBookByAuthor(author);
+    }
     //delete book//
     public void deleteBook(Long bookId){
         bookRepository.findById(bookId)
