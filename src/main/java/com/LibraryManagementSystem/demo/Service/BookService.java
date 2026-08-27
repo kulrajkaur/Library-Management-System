@@ -44,6 +44,10 @@ public class BookService {
     public List <Books> findBookByAuthor(String author){
         return bookRepository.findBookByAuthor(author);
     }
+
+    public List <Books> findBookByTitle(String bookName){
+        return bookRepository.findBookByTitle(bookName);
+    }
     //delete book//
     public void deleteBook(Long bookId){
         bookRepository.findById(bookId)
